@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
       if (serverResp["status"] == "true") {
         console.log(serverResp["status"]);
         this.globalService.currentIsLogin(true);
+        this.globalService.currentIsLoginPage(false);
 
         // this.globalService.currentUserData(data)
         this.router.navigate([""]);

@@ -30,7 +30,9 @@ export class NavComponent implements OnInit {
   }
 
   onLogin() {
-    this.service.currentIsLogin(true);
+    this.service.currentIsLoginPage(true);
+    this.service.currentItemCount(0);
+    this.service.currentCart([]);
     this.router.navigate(["/login"]);
   }
 

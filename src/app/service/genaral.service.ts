@@ -20,6 +20,9 @@ export class GenaralService {
   private isLogin = new BehaviorSubject(false);
   sharedIsLogin = this.isLogin.asObservable();
 
+  private isLoginPage = new BehaviorSubject(false);
+  sharedisLoginPage = this.isLoginPage.asObservable();
+
   constructor(private http: HttpClient) { }
 
   currentItemCount(item: number) {
@@ -36,6 +39,10 @@ export class GenaralService {
 
   currentIsLogin(data: boolean) {
     this.isLogin.next(data);
+  }
+
+  currentIsLoginPage(data: boolean) {
+    this.isLoginPage.next(data);
   }
 
   custermerRegister(data) {

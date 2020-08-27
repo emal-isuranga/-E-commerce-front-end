@@ -31,45 +31,6 @@ export class MainPageComponent implements OnInit {
     this.service.getAllIteam().subscribe((res) => {
       this.items = res;
     });
-
-    // this.items = [
-    //   {
-    //     image: '../../../assets/images/pexels-photo-1721934.jpeg',
-    //     name: 'Just For You Mom Ribbon',
-    //     price: 100,
-    //     isAdding: false
-    //   },
-    //   {
-    //     image: '../../../assets/images/pexels-photo-1721934.jpeg',
-    //     name: 'Just For',
-    //     price: 150,
-    //     isAdding: false
-    //   },
-    //   {
-    //     image: '../../../assets/images/pexels-photo-1721934.jpeg',
-    //     name: 'Mom Ribbon Cake',
-    //     price: 200,
-    //     isAdding: false
-    //   },
-    //   {
-    //     image: '../../../assets/images/pexels-photo-1721934.jpeg',
-    //     name: 'You Mom ',
-    //     price: 180,
-    //     isAdding: false
-    //   },
-    //   {
-    //     image: '../../../assets/images/pexels-photo-1721934.jpeg',
-    //     name: 'Just For You Mom Ribbon Cake',
-    //     price: 220,
-    //     isAdding: false
-    //   },
-    //   {
-    //     image: '../../../assets/images/pexels-photo-1721934.jpeg',
-    //     name: 'Just For You Mom Ribbon Cake',
-    //     price: 300,
-    //     isAdding: false
-    //   }
-    // ]
   }
 
   addCart(item, i) {

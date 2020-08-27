@@ -9,6 +9,7 @@ import { GenaralService } from './service/genaral.service';
 export class AppComponent implements OnInit {
   title = 'cart';
   isLogin: boolean;
+  isLoginPage: boolean
 
   constructor(
     private globalService: GenaralService,
@@ -17,5 +18,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.globalService.sharedIsLogin.subscribe(isLogin => this.isLogin = isLogin);
+    this.globalService.sharedisLoginPage.subscribe(isLoginPage => this.isLoginPage = isLoginPage);
   }
 }

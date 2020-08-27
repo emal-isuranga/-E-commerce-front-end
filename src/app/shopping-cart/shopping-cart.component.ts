@@ -12,24 +12,25 @@ export class ShoppingCartComponent implements OnInit {
   totalPrice: number = 0;
   isLogin: boolean;
 
-  constructor(private service: GenaralService, private router: Router) {}
+  constructor(private service: GenaralService, private router: Router) { }
 
   ngOnInit() {
     this.service.sharedIsLogin.subscribe((isLogin) => (this.isLogin = isLogin));
-    if (this.isLogin) {
-      this.service.sharedCart.subscribe(
-        (cartList) => (this.cartList = cartList)
-      );
-      console.log(this.cartList);
-      if (this.cartList.length == 0) {
-        this.router.navigate(["home"]);
-      }
-
-      this.cartList.forEach((element) => {
-        this.totalPrice += parseInt(element.price);
-      });
-    } else {
-      this.router.navigate([""]);
+    // if (this.isLogin) {
+    this.service.sharedCart.subscribe(
+      (cartList) => (this.cartList = cartList)
+    );
+    console.log(this.cartList);
+    if (this.cartList.length == 0) {
+      this.router.navigate(["home"]);
     }
+
+    this.cartList.forEach((element) => {
+      this.totalPrice += parseInt(element.price);
+    });
+
+    // } else {
+    //   this.router.navigate([""]);
+    // }
   }
 }

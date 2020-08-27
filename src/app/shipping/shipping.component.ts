@@ -48,7 +48,7 @@ export class ShippingComponent implements OnInit {
 
   onSubmit() {
     let data = this.contactForm.value;
-    data["ttotalPrice"] = this.totalPrice;
+    data["totalPrice"] = this.totalPrice;
     this.service.setOrderDetailes(data).subscribe((res) => {
       if (res) {
         this.router.navigate(["/thank-page"]);
